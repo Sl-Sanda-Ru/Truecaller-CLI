@@ -4,11 +4,11 @@
   <a href="https://raw.githubusercontent.com/Sl-Sanda-Ru/Truecaller-CLI/main/LICENSE" target="_blank">
     <img alt="License: GPL-3.0 License" src="https://img.shields.io/github/license/Sl-Sanda-Ru/Truecaller-CLI?color=darkgreen" />
   </a>
-  <a href="https://frontend.code-inspector.com/public/project/28868/Truecaller-CLI/dashboard" target="_blank">
-    <img alt="Code Grade" src="https://www.code-inspector.com/project/28868/status/svg">
+  <a href="https://frontend.code-inspector.com/public/project/29027/Truecaller-CLI/dashboard" target="_blank">
+    <img alt="Code Grade" src="https://www.code-inspector.com/project/29027/status/svg">
   </a>
-  <a href="https://frontend.code-inspector.com/public/project/28868/Truecaller-CLI/dashboard" target="_blank">
-    <img alt="Code Score" src="https://www.code-inspector.com/project/28868/score/svg">
+  <a href="https://frontend.code-inspector.com/public/project/29027/Truecaller-CLI/dashboard" target="_blank">
+    <img alt="Code Score" src="https://www.code-inspector.com/project/29027/score/svg">
   </a>
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Sl-Sanda-Ru/Truecaller-CLI?color=green">
 </p>
