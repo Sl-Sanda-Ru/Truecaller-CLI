@@ -2,7 +2,7 @@
 <h2 align="center">Command Line Version For Truecaller Written In Python</h2>
 <p align="center">
   <a href="https://raw.githubusercontent.com/Sl-Sanda-Ru/Truecaller-CLI/main/LICENSE" target="_blank">
-    <img alt="License: GPL-3.0 License" src="https://img.shields.io/github/license/Sl-Sanda-Ru/Truecaller-CLI?color=darkgreen" />
+    <img alt="License: GPL-3.0 License" src="https://img.shields.io/github/license/Sl-Sanda-Ru/Truecaller-CLI?color=success" />
   </a>
   <a href="https://frontend.code-inspector.com/public/project/29027/Truecaller-CLI/dashboard" target="_blank">
     <img alt="Code Grade" src="https://www.code-inspector.com/project/29027/status/svg">
