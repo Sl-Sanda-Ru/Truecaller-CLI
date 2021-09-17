@@ -16,6 +16,8 @@ except ModuleNotFoundError:
     print('\x1b[1m\x1b[31m' + '[!] required dependencies aren\'t installed\ninstalling..'.title())
     pip.main(['install', 'pyfiglet', 'colorama', 'requests'])
     exit('\x1b[1m\x1b[92m' + '[+] dependencies installed\nrun the program again'.title())
+
+
 blu = colorama.Style.BRIGHT + colorama.Fore.BLUE
 cya = colorama.Style.BRIGHT + colorama.Fore.CYAN
 gre = colorama.Style.BRIGHT + colorama.Fore.GREEN
