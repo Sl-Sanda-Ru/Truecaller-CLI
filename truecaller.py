@@ -50,7 +50,7 @@ def authreq(num, method):
     else:
         return False, req.json()['message']
 
-def authveri(id, num, pin):
+def authveri(id_, num, pin):
     json = {'countryCode':'', 'dialingCode':None, 'phoneNumber':num, 'requestId':id, 'token':pin}
     headers = {'content-type':'application/json; charset=UTF-8', 'accept-encoding':'gzip', 'user-agent':'Truecaller/11.75.5 (Android;10)', 'clientsecret':'lvc22mp3l1sfv6ujg83rd17btt'}
     req = requests.post('https://account-asia-south1.truecaller.com/v1/verifyOnboardingOtp', headers=headers, json=json)
@@ -61,7 +61,7 @@ def authveri(id, num, pin):
     else:
         return req.json()['installationId']
 
-def numsearch(authkey,num):
+def numsearch(authkey, num):
     params = {'q':num, 'countryCode':'', 'type':'4', 'locAddr':'', 'placement':'SEARCHRESULTS,HISTORY,DETAILS', 'encoding':'json'}
     headers = {'content-type':'application/json; charset=UTF-8', 'accept-encoding':'gzip', 'user-agent':'Truecaller/11.75.5 (Android;10)', 'clientsecret':'lvc22mp3l1sfv6ujg83rd17btt', 'authorization':'Bearer ' + authkey}
     req = requests.get('https://search5-noneu.truecaller.com/v2/search', headers=headers, params=params)
@@ -78,7 +78,7 @@ def logo():
         color2 = random.choice(color_list)
     print('\n' * 2 + color2 + pyfiglet.figlet_format('Truecaller\nCLI', font=font, justify='center', width=os.get_terminal_size().columns), end='\n')
 def spinner():
-    l = ['|','/','-','\\']
+    l = ['|', '/', '-', '\\']
     tmp = '[*] checking your internet connection'.title().center(os.get_terminal_size().columns).split('[*] checking your internet connection'.title())[0]
     _ = random.choice(color_list)
     for i in l + l + l:
@@ -94,7 +94,7 @@ def main():
     else:
         tmp = file.read()
         file.close()
-        creds = {'auth':tmp.split(',')[0],'num':tmp.split(',')[1]}
+        creds = {'auth':tmp.split(',')[0], 'num':tmp.split(',')[1]}
     tmp = '>>> '.title().center(os.get_terminal_size().columns).split('>>> ')[0]
     if creds:
         print(random.choice(color_list) + f'welcome you are logged in as {creds["num"]}'.title().center(os.get_terminal_size().columns))
@@ -104,7 +104,7 @@ def main():
         while True:
             try:
                 selected = int(input(colorama.Style.BRIGHT + tmp[:-3] + '>>> '))
-                if selected in range(1,4):
+                if selected in range(1, 4):
                     break
                 else:
                     print(RED + '[!] wrong input'.title().center(os.get_terminal_size().columns))
@@ -116,7 +116,7 @@ def main():
         while True:
             try:
                 selected = int(input(colorama.Style.BRIGHT + tmp[:-3] + '>>> '))
-                if selected in range(1,3):
+                if selected in range(1, 3):
                     break
                 else:
                     print(RED + '[!] wrong input'.title().center(os.get_terminal_size().columns))
@@ -163,8 +163,8 @@ def main():
                 main()
             else:
                 print(GRE + f'[+] logged in as {unum}'.title().center(os.get_terminal_size().columns))
-                with open('.auth','w') as file:
-                    file.write('%s,%s'%(result,unum))
+                with open('.auth', 'w') as file:
+                    file.write('%s,%s'%(result, unum))
                 time.sleep(1)
                 main()
     elif creds and selected == 1:
