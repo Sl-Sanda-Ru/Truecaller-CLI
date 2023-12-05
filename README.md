@@ -16,7 +16,7 @@
 sudo apt install git python3
 git clone https://github.com/Sl-Sanda-Ru/Truecaller-CLI.git
 cd Truecaller-CLI
-python3 -m pip install requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ## Usage
