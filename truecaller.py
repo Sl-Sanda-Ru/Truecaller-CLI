@@ -6,16 +6,16 @@ import random
 import os
 import time
 import sys
-import pip
+
+PYTHON_VERSION = "python" + ".".join(str(i) for i in sys.version_info[:2])
 
 try:
     import requests
     import colorama
     import pyfiglet
 except ModuleNotFoundError:
-    print('\x1b[1m\x1b[31m' + '[!] required dependencies aren\'t installed\ninstalling..'.title())
-    pip.main(['install', 'pyfiglet', 'colorama', 'requests'])
-    sys.exit('\x1b[1m\x1b[92m' + '[+] dependencies installed\nrun the program again'.title())
+    print('\x1b[1m\x1b[31m' + '[!] required dependencies aren\'t installed..'.title())
+    sys.exit('\x1b[1m\x1b[31m' + f'[+] install using {PYTHON_VERSION} -m pip install -r requirements.txt')
 
 
 BLU = colorama.Style.BRIGHT + colorama.Fore.BLUE
@@ -127,7 +127,7 @@ def main():
         print(random.choice(color_list) + '[+] enter your phone number in international format with plus sign'.title().center(os.get_terminal_size().columns))
         print(random.choice(color_list) + 'example: +16462033216'.title().center(os.get_terminal_size().columns))
         while True:
-            unum = input(colorama.Style.BRIGHT + tmp[:-3] + '>>> ')
+            unum = ''.join(input(colorama.Style.BRIGHT + tmp[:-3] + '>>> ').split())
             if len(unum) > 7 and unum[0] == '+' and unum[1:].isdecimal():
                 break
             else:
@@ -171,7 +171,7 @@ def main():
         print(random.choice(color_list) + '[+] enter your phone number that you want to search'.title().center(os.get_terminal_size().columns))
         print(random.choice(color_list) + 'in international format with plus sign'.title().center(os.get_terminal_size().columns))
         while True:
-            lnum = input(colorama.Style.BRIGHT + tmp[:-3] + '>>> ')
+            lnum = ''.join(input(colorama.Style.BRIGHT + tmp[:-3] + '>>> ').split())
             if len(lnum) > 7 and lnum[0] == '+' and lnum[1:].isdecimal():
                 break
             else:
@@ -214,12 +214,12 @@ if __name__ == '__main__':
     spinner()
     try:
         requests.get('https://github.com/')
-        time.sleep(0.4)
-        print(LIGRE + '[+] Connection Successful!'.center(os.get_terminal_size().columns))
-        time.sleep(0.4)
     except Exception:
         time.sleep(0.4)
         print(LIRED + '[!] Connection Failed!'.center(os.get_terminal_size().columns))
         time.sleep(0.4)
         sys.exit(LIRED + '[!] Exiting'.center(os.get_terminal_size().columns))
+    time.sleep(0.4)
+    print(LIGRE + '[+] Connection Successful!'.center(os.get_terminal_size().columns))
+    time.sleep(0.4)
     main()
